@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "My Library";
+    ViewData["Header"] = "My Library";
+    ViewData["SubHeader"] = "Managing your library has never been easier!";
+}
+
+@model List<Entertainers>
+
+<div class="justify-content-center align-items-center rounded mx-auto p-3 shadow" style="width: 80%;">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Stage Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in Model)
+            {
+                <tr>
+                    <th scope="row">@entry.EntStageName</th>
+                    <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@entry.EntertainerId">Details</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary"><a asp-controller="Home" asp-action="Edit" asp-route-id="">Add Entertainer</a></button>
+</div>

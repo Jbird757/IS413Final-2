@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Edit Info";
+    ViewData["Header"] = "Update an Entertainer!";
+}
+
+@model IS413Final_2.Models.Entertainers
+
+<br />
+<br />
+<div class="justify-content-center align-items-center rounded mx-auto p-3 shadow" style="width: 50%;">
+    <form id="movieEntry" method="post">
+        <br />
+
+        <div class="form-group">
+            <label asp-for="EntStageName">*Stage Name:</label>
+            <input class="form-control" asp-for="EntStageName" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntSsn">SSN:</label>
+            <input class="form-control" asp-for="EntSsn" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntStreetAddress">Street Address:</label>
+            <input class="form-control" asp-for="EntStreetAddress" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntCity">City:</label>
+            <input class="form-control" asp-for="EntCity" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntState">State:</label>
+            <input class="form-control" asp-for="EntState" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntZipCode">Zip:</label>
+            <input class="form-control" asp-for="EntZipCode" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntPhoneNumber">Phone Number:</label>
+            <input class="form-control" asp-for="EntPhoneNumber" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntWebPage">Web Page:</label>
+            <input class="form-control" asp-for="EntWebPage" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EntEmailAddress">Email:</label>
+            <input class="form-control" asp-for="EntEmailAddress" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DateEntered">Date Created:</label>
+            <input class="form-control" asp-for="DateEntered" />
+        </div>
+
+        <p>* Indicates a required field</p>
+        <button type="submit" class="btn btn-primary">Create Movie Entry</button>
+
+        <input type="hidden" asp-for="EntertainerId" />
+
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>
