@@ -10,5 +10,9 @@ namespace IS413Final_2.Models
         IQueryable<Entertainers> Entertainers { get; }
 
         void SaveThings(Entertainers entertainers);
+
+        void UpdateThings(Entertainers entertainers);
+
+        void DeleteThings(Entertainers entertainers);
     }
 }

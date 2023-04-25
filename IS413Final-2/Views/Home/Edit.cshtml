@@ -8,7 +8,7 @@
 <br />
 <br />
 <div class="justify-content-center align-items-center rounded mx-auto p-3 shadow" style="width: 50%;">
-    <form id="movieEntry" method="post">
+    <form method="post">
         <br />
 
         <div class="form-group">
@@ -62,10 +62,12 @@
         </div>
 
         <p>* Indicates a required field</p>
-        <button type="submit" class="btn btn-primary">Create Movie Entry</button>
+        <button type="submit" class="btn btn-primary">Update</button>
 
         <input type="hidden" asp-for="EntertainerId" />
 
         <div asp-validation-summary="All"></div>
     </form>
+
+    <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.EntertainerId">Delete</a>
 </div>

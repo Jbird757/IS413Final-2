@@ -20,13 +20,21 @@ namespace IS413Final_2.Models
         public void SaveThings(Entertainers entertainers)
         {
             _context.AttachRange(entertainers);
-
-            if (entertainers.EntertainerId == 0)
-            {
-                _context.Entertainers.Add(entertainers);
-            }
-
+            _context.Entertainers.Add(entertainers);
             _context.SaveChanges();
+        }
+
+        public void UpdateThings(Entertainers entertainers)
+        {
+            _context.Entry(entertainers).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void DeleteThings(Entertainers entertainers)
+        {
+            _context.Set<Entertainers>().Remove(entertainers);
+            _context.SaveChanges();
+
         }
     }
 }

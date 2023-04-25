@@ -35,9 +35,16 @@ namespace IS413Final_2.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Add()
         {
-            return View(new Entertainers());
+            return View("Edit", new Entertainers());
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Entertainers entertainer = repo.Entertainers.Single(x => x.EntertainerId == id);
+            return View(entertainer);
         }
 
         [HttpPost]
@@ -45,11 +52,29 @@ namespace IS413Final_2.Controllers
         {
             if (ModelState.IsValid)
             {
-                repo.SaveThings(e);
+                repo.UpdateThings(e);
                 return RedirectToAction("Entertainers");
             }
 
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            Entertainers entertainer = repo.Entertainers.Single(x => x.EntertainerId == id);
+            return View(entertainer);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Entertainers e)
+        {
+            if (e != null)
+            {
+                repo.DeleteThings(e);
+            }
+            
+            return RedirectToAction("Entertainers");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

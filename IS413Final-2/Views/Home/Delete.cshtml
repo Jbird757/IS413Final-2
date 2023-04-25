@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+    ViewData["Header"] = "Delete";
+}
+
+@model Entertainers
+
+
+<div class="justify-content-center align-items-center rounded mx-auto p-3 shadow" style="width: 50%;">
+    <div class="justify-content-center align-items-center">
+        <h2>Confirm Deletion</h2>
+        <p>@Model.EntStageName  will be permanently deleted</p>
+    </div>
+
+    <form method="post" asp-controller="Home" asp-action="Delete">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a class="btn btn-dark" asp-controller="Home" asp-action="Index" >Cancel</a>
+        <input type="hidden" asp-for="EntertainerId" />
+    </form>
+</div>
